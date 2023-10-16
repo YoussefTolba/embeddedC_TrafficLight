@@ -1,0 +1,75 @@
+# Traffic Light Controller Code Documentation
+
+**Author:** Youssef Tolba
+
+## Introduction
+
+This documentation explains the functionality and usage of the provided C code, which controls a traffic light system. The code manages the sequence of the red, yellow, and green lights, displaying "Do Not Cross" and "You Can Cross" messages accordingly.
+
+## Prerequisites
+
+**Hardware Requirements:**
+- Microcontroller with GPIO support (e.g., AVR)
+- 7-segment display
+- LCD display
+- Traffic light LEDs
+- Appropriate resistors and wiring
+
+**Software Requirements:**
+- AVR GCC toolchain
+- AVRDUDE (for programming the microcontroller)
+- WinAVR (for Windows users)
+
+## Code Structure
+
+### Includes Section
+
+This section includes necessary libraries and defines the system's clock frequency.
+
+### Sub-Program Declarations Section
+
+In this section, subroutines used in the main program are declared:
+- `traffic_light`: Manages traffic light phases and timers, displaying messages on the LCD.
+- `display_fifteen`: Displays a countdown timer for 15 seconds using a 7-segment display.
+- `display_Five`: Displays a countdown timer for 5 seconds using a 7-segment display.
+
+### Main Function
+
+- Initializes essential hardware components, like ports and the LCD.
+- Enters the main loop, repeatedly calling the `traffic_light` function.
+
+### Sub-Programs
+
+1. **`traffic_light` Function:**
+
+   - Manages traffic light phases and timers, displaying messages on the LCD.
+   - Displays "Do Not Cross" during the green phase and "You Can Cross" during the red phase.
+
+2. **`display_fifteen` Function:**
+
+   - Displays a countdown timer for 15 seconds using a 7-segment display.
+   - Utilizes the `PortC` and `PortB` to display numbers and `_delay_ms` for timing.
+
+3. **`display_Five` Function:**
+
+   - Displays a countdown timer for 5 seconds using a 7-segment display.
+   - Utilizes the `PortB` and `_delay_ms` for timing.
+
+## Usage
+
+1. Connect the required hardware components as specified in the code.
+2. Ensure you have the necessary software tools and libraries installed.
+3. Compile the code using the AVR GCC toolchain.
+4. Program the microcontroller using AVRDUDE.
+5. Observe the traffic light behavior on the connected hardware.
+
+## Customization
+
+- Adjust the timings of the traffic light phases by modifying the `display_fifteen` and `display_Five` functions.
+- Change the message displayed during the green and red phases by updating the LCD strings in the `traffic_light` function.
+
+## Troubleshooting
+
+- If issues arise, verify your hardware connections and the software toolchain setup.
+- Confirm you are using the correct microcontroller and clock frequency settings as specified in the code.
+
