@@ -9,7 +9,7 @@ This documentation explains the functionality and usage of the provided C code, 
 ## Prerequisites
 
 **Hardware Requirements:**
-- Microcontroller with GPIO support (e.g., AVR)
+- Microcontroller: atmega32
 - 7-segment display
 - LCD display
 - Traffic light LEDs
